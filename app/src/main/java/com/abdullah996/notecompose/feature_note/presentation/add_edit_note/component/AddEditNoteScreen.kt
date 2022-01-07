@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.abdullah996.notecompose.core.util.TestTags
 import com.abdullah996.notecompose.feature_note.domain.model.Note
 import com.abdullah996.notecompose.feature_note.presentation.add_edit_note.AddEditNoteEvent
 import com.abdullah996.notecompose.feature_note.presentation.add_edit_note.AddEditNotesViewModel
@@ -129,7 +130,8 @@ fun AddEditNoteScreen(
                 },
                 isHintVisible = titleState.isHintVisible,
                 singleLine = true,
-                textStyle = MaterialTheme.typography.h5
+                textStyle = MaterialTheme.typography.h5,
+                testTag = TestTags.TITLE_TEXT_FILED
             )
             Spacer(modifier = Modifier.height(16.dp))
             TransparentHintTextField(
@@ -143,7 +145,8 @@ fun AddEditNoteScreen(
                 },
                 isHintVisible = contentState.isHintVisible,
                 textStyle = MaterialTheme.typography.body1,
-                modifier = Modifier.fillMaxHeight()
+                modifier = Modifier.fillMaxHeight(),
+                testTag = TestTags.CONTENT_TEXT_FILED
             )
         }
     }
